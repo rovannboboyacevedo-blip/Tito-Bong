@@ -1,0 +1,2122 @@
+/*==================================================
+        EMERALD INVITATION
+        VERSION 2
+==================================================*/
+
+/*===============================
+RESET
+================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+    background:#eef6ef;
+
+    color:#234231;
+
+}
+
+/*===============================
+ROOT COLORS
+================================*/
+
+:root{
+
+    --dark:#123524;
+
+    --green:#1B5E20;
+
+    --green2:#2E7D32;
+
+    --green3:#43A047;
+
+    --sage:#A5D6A7;
+
+    --mint:#E8F5E9;
+
+    --gold:#D4AF37;
+
+    --gold2:#FFD54F;
+
+    --white:#ffffff;
+
+    --shadow:
+    0 15px 40px
+    rgba(0,0,0,.12);
+
+}
+
+/*===============================
+SCROLLBAR
+================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#dceadf;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--green);
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--dark);
+
+}
+
+/*===============================
+GENERAL
+================================*/
+
+section{
+
+    position:relative;
+
+    padding:120px 8%;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+button{
+
+    font-family:inherit;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+/*===============================
+PRELOADER
+================================*/
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #143524,
+    #1B5E20);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999999;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.loader-ring{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    border:
+
+    5px solid rgba(255,255,255,.25);
+
+    border-top:5px solid white;
+
+    animation:spin 1s linear infinite;
+
+    margin:auto auto 30px;
+
+}
+
+.loader-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px;
+
+    letter-spacing:2px;
+
+}
+
+.loader-content p{
+
+    margin-top:15px;
+
+    color:#d8f3dc;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*===============================
+BACKGROUND PARTICLES
+================================*/
+
+#particles,
+#sparkles,
+#balloons{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:2;
+
+}
+
+/*===============================
+MUSIC BUTTON
+================================*/
+
+#musicBtn{
+
+    position:fixed;
+
+    right:35px;
+
+    bottom:35px;
+
+    width:65px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--green),
+    var(--green2));
+
+    color:white;
+
+    cursor:pointer;
+
+    z-index:999;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+}
+
+#musicBtn:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--dark);
+
+}
+
+/*===============================
+OPENING SCREEN
+================================*/
+
+#opening{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(circle at top,
+
+    rgba(212,175,55,.18),
+
+    transparent 40%),
+
+    linear-gradient(
+
+    135deg,
+
+    #163b2b,
+
+    #245436,
+
+    #306b43);
+
+}
+
+.opening-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    rgba(0,0,0,.18);
+
+}
+
+.opening-content{
+
+    position:relative;
+
+    z-index:5;
+
+    color:white;
+
+    max-width:900px;
+
+}
+
+.invite-small{
+
+    letter-spacing:8px;
+
+    margin-bottom:20px;
+
+    color:#d8f3dc;
+
+}
+
+.opening-content h1{
+
+    font-family:
+
+    'Cormorant Garamond',
+
+    serif;
+
+    font-size:95px;
+
+    color:white;
+
+}
+
+.opening-content h2{
+
+    font-family:
+
+    'Cormorant Garamond',
+
+    serif;
+
+    font-size:120px;
+
+    color:var(--gold);
+
+    line-height:1;
+
+}
+
+.opening-content span{
+
+    display:block;
+
+    margin-top:12px;
+
+    font-family:
+
+    'Great Vibes',
+
+    cursive;
+
+    font-size:45px;
+
+    color:#fef7d7;
+
+}
+
+/*===============================
+ENVELOPE
+================================*/
+
+.envelope{
+
+    position:relative;
+
+    width:360px;
+
+    height:240px;
+
+    margin:60px auto;
+
+}
+
+.envelope-back{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+    145deg,
+    #215034,
+    #2f7246);
+
+    border-radius:12px;
+
+    box-shadow:
+
+    0 30px 50px rgba(0,0,0,.25);
+
+}
+
+.letter{
+
+    position:absolute;
+
+    left:50%;
+
+    top:25px;
+
+    transform:translateX(-50%);
+
+    width:88%;
+
+    height:200px;
+
+    background:white;
+
+    border-radius:8px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:1s;
+
+    z-index:2;
+
+}
+
+.letter h3{
+
+    font-family:
+
+    'Cormorant Garamond',
+
+    serif;
+
+    font-size:38px;
+
+    color:var(--dark);
+
+}
+
+.letter p{
+
+    margin-top:10px;
+
+    color:#666;
+
+}
+
+.envelope-front{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    height:58%;
+
+    background:
+
+    linear-gradient(
+    145deg,
+    #2f7246,
+    #40995c);
+
+    clip-path:
+
+    polygon(
+    0 0,
+    50% 100%,
+    100% 0,
+    100% 100%,
+    0 100%
+    );
+
+    z-index:4;
+
+}
+
+.seal{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:30px;
+
+    transform:translateX(-50%);
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:
+
+    linear-gradient(
+    145deg,
+    var(--gold),
+    #f8d86b);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:28px;
+
+    z-index:5;
+
+    box-shadow:
+
+    0 10px 20px
+    rgba(0,0,0,.25);
+
+}
+
+/*===============================
+OPEN BUTTON
+================================*/
+
+#openInvitation{
+
+    margin-top:20px;
+
+    padding:18px 42px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold2));
+
+    color:#173924;
+
+    font-weight:600;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+#openInvitation:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+    0 18px 35px
+    rgba(0,0,0,.25);
+
+}
+/*=========================================
+            HERO SECTION
+=========================================*/
+
+#mainContent{
+
+    display:none;
+
+    background:#f7fbf7;
+
+}
+
+#hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #f7fbf7 0%,
+    #edf7ef 100%);
+
+}
+
+/* Decorative Background */
+
+#hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(212,175,55,.18),
+    transparent 70%);
+
+    top:-220px;
+
+    right:-120px;
+
+    border-radius:50%;
+
+}
+
+#hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(46,125,50,.08),
+    transparent 70%);
+
+    left:-150px;
+
+    bottom:-150px;
+
+    border-radius:50%;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+    rgba(255,255,255,.10),
+    rgba(255,255,255,.15));
+
+}
+
+/*=========================================
+HERO LAYOUT
+=========================================*/
+
+.hero-container{
+
+    position:relative;
+
+    z-index:5;
+
+    display:grid;
+
+    grid-template-columns:
+
+    1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+    width:100%;
+
+}
+
+/*=========================================
+LEFT IMAGE
+=========================================*/
+
+.hero-image{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:480px;
+
+    border-radius:30px;
+
+    box-shadow:
+
+    0 35px 70px
+
+    rgba(0,0,0,.18);
+
+    border:8px solid white;
+
+    transition:.6s;
+
+}
+
+.hero-image img:hover{
+
+    transform:
+
+    translateY(-8px)
+
+    scale(1.02);
+
+}
+
+/* Gold Glow */
+
+.hero-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:480px;
+
+    height:480px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(212,175,55,.18),
+
+    transparent 70%);
+
+    z-index:-1;
+
+}
+
+/*=========================================
+RIGHT CONTENT
+=========================================*/
+
+.hero-content{
+
+    position:relative;
+
+}
+
+.hero-content .mini{
+
+    letter-spacing:8px;
+
+    color:var(--green2);
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+}
+
+.hero-content h1{
+
+    font-family:
+
+    'Cormorant Garamond',
+
+    serif;
+
+    font-size:85px;
+
+    line-height:1;
+
+    color:var(--dark);
+
+}
+
+/*=========================================
+GOLD NUMBER
+=========================================*/
+
+.number60{
+
+    font-family:
+
+    'Cormorant Garamond',
+
+    serif;
+
+    font-size:180px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    margin:10px 0;
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    #fff7c2,
+
+    #ffd54f,
+
+    #d4af37,
+
+    #fff8d4);
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+
+    0 3px 8px
+
+    rgba(0,0,0,.15);
+
+}
+
+.number60 span{
+
+    font-size:70px;
+
+}
+
+/*=========================================
+TITLE
+=========================================*/
+
+.hero-content h2{
+
+    font-family:
+
+    'Great Vibes',
+
+    cursive;
+
+    font-size:58px;
+
+    color:var(--green);
+
+    margin-top:-20px;
+
+}
+
+.gold-line{
+
+    width:170px;
+
+    height:4px;
+
+    background:
+
+    linear-gradient(
+
+    to right,
+
+    transparent,
+
+    var(--gold),
+
+    transparent);
+
+    margin:35px 0;
+
+}
+
+/*=========================================
+DATE CARD
+=========================================*/
+
+.event-short{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:30px;
+
+}
+
+.event-short div{
+
+    background:white;
+
+    padding:18px 24px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.event-short h1{
+
+    font-size:55px;
+
+    color:var(--green);
+
+}
+
+.event-short h3{
+
+    font-size:20px;
+
+    color:var(--dark);
+
+}
+
+/*=========================================
+VENUE
+=========================================*/
+
+.venue-short{
+
+    color:#456053;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:45px;
+
+}
+
+/*=========================================
+BUTTON
+=========================================*/
+
+.exploreBtn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:18px 45px;
+
+    border-radius:60px;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    var(--green),
+
+    var(--green2));
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.exploreBtn:hover{
+
+    transform:
+
+    translateY(-8px);
+
+    background:var(--dark);
+
+}
+
+/*=========================================
+FLOATING BLOBS
+=========================================*/
+
+.hero-blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(40px);
+
+    opacity:.20;
+
+}
+
+.hero-blob.one{
+
+    width:260px;
+
+    height:260px;
+
+    background:#43A047;
+
+    top:120px;
+
+    right:50px;
+
+}
+
+.hero-blob.two{
+
+    width:180px;
+
+    height:180px;
+
+    background:#FFD54F;
+
+    bottom:100px;
+
+    left:40px;
+
+}
+
+/*=========================================
+SHIMMER ANIMATION
+=========================================*/
+
+@keyframes shimmer{
+
+    0%{
+
+        background-position:-300px;
+
+    }
+
+    100%{
+
+        background-position:400px;
+
+    }
+
+}
+
+.number60{
+
+    background-size:300% 300%;
+
+    animation:
+
+    shimmer 6s linear infinite;
+
+}
+/*==================================================
+        STYLE.CSS V2 - PART 1C
+        SECTION TITLES
+        FLOATING EFFECTS
+        ANIMATIONS
+        RESPONSIVE HERO
+==================================================*/
+
+/*===============================
+SECTION TITLE
+================================*/
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:70px;
+
+    color:var(--dark);
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+.section-title h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-18px;
+
+    width:140px;
+
+    height:4px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    to right,
+    transparent,
+    var(--gold),
+    transparent);
+
+}
+
+.section-title p{
+
+    margin-top:35px;
+
+    font-size:18px;
+
+    color:#58705f;
+
+    max-width:700px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+    line-height:1.8;
+
+}
+
+/*===============================
+GLASS CARD
+================================*/
+
+.glass{
+
+    background:
+    rgba(255,255,255,.55);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid
+    rgba(255,255,255,.4);
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/*===============================
+FLOATING BALLOONS
+================================*/
+
+.balloon{
+
+    position:absolute;
+
+    width:60px;
+
+    height:80px;
+
+    border-radius:50% 50% 45% 45%;
+
+    animation:floatBalloon
+    12s linear infinite;
+
+    opacity:.30;
+
+}
+
+.balloon::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-70px;
+
+    width:2px;
+
+    height:70px;
+
+    background:#d0d0d0;
+
+}
+
+.green-balloon{
+
+    background:#2E7D32;
+
+}
+
+.gold-balloon{
+
+    background:#D4AF37;
+
+}
+
+.sage-balloon{
+
+    background:#81C784;
+
+}
+
+@keyframes floatBalloon{
+
+    0%{
+
+        transform:
+        translateY(100vh)
+        rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-140vh)
+        rotate(8deg);
+
+    }
+
+}
+
+/*===============================
+SPARKLES
+================================*/
+
+.sparkle{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    box-shadow:
+
+    0 0 15px
+
+    var(--gold);
+
+    animation:
+
+    sparkle 4s ease-in-out infinite;
+
+}
+
+@keyframes sparkle{
+
+    0%{
+
+        opacity:0;
+
+        transform:scale(.3);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:scale(.3);
+
+    }
+
+}
+
+/*===============================
+FLOATING LEAVES
+================================*/
+
+.leaf{
+
+    position:absolute;
+
+    color:#2E7D32;
+
+    font-size:24px;
+
+    animation:
+
+    leafFall linear forwards;
+
+    opacity:.55;
+
+}
+
+@keyframes leafFall{
+
+    from{
+
+        transform:
+
+        translateY(-100px)
+
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+
+        translateY(120vh)
+
+        rotate(360deg);
+
+    }
+
+}
+
+/*===============================
+FADE ANIMATIONS
+================================*/
+
+.fade-up{
+
+    animation:
+
+    fadeUp
+
+    1s ease forwards;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0);
+
+    }
+
+}
+
+.fade-left{
+
+    animation:
+
+    fadeLeft
+
+    1s ease forwards;
+
+}
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateX(-60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateX(0);
+
+    }
+
+}
+
+.fade-right{
+
+    animation:
+
+    fadeRight
+
+    1s ease forwards;
+
+}
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateX(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateX(0);
+
+    }
+
+}
+
+/*===============================
+BUTTON HOVER
+================================*/
+
+button,
+.exploreBtn,
+.locationBtn{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+button::before,
+.exploreBtn::before,
+.locationBtn::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.45),
+
+    transparent);
+
+}
+
+button:hover::before,
+.exploreBtn:hover::before,
+.locationBtn:hover::before{
+
+    left:130%;
+
+    transition:.8s;
+
+}
+
+/*===============================
+RESPONSIVE
+================================*/
+
+@media(max-width:1200px){
+
+.hero-container{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+gap:60px;
+
+}
+
+.hero-image{
+
+order:-1;
+
+}
+
+.hero-content{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.hero-content h1{
+
+font-size:70px;
+
+}
+
+.number60{
+
+font-size:150px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+section{
+
+padding:90px 6%;
+
+}
+
+.opening-content h1{
+
+font-size:60px;
+
+}
+
+.opening-content h2{
+
+font-size:90px;
+
+}
+
+.opening-content span{
+
+font-size:32px;
+
+}
+
+.envelope{
+
+width:280px;
+
+height:190px;
+
+}
+
+.hero-image img{
+
+max-width:320px;
+
+}
+
+.hero-content h1{
+
+font-size:52px;
+
+}
+
+.number60{
+
+font-size:110px;
+
+}
+
+.number60 span{
+
+font-size:42px;
+
+}
+
+.hero-content h2{
+
+font-size:42px;
+
+}
+
+.event-short{
+
+flex-direction:column;
+
+}
+
+.section-title h2{
+
+font-size:50px;
+
+}
+
+.section-title p{
+
+font-size:16px;
+
+}
+
+#musicBtn{
+
+width:55px;
+
+height:55px;
+
+right:20px;
+
+bottom:20px;
+
+}
+
+}
+
+/*==================================================
+        STYLE.CSS V2 - PART 2A
+        EVENT DETAILS
+==================================================*/
+
+
+/*=========================================
+EVENT DETAILS
+=========================================*/
+
+#details{
+
+    background:white;
+
+}
+
+.details-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:60px;
+
+}
+
+.detail-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    border-top:5px solid transparent;
+
+}
+
+.detail-card:hover{
+
+    transform:
+    translateY(-12px);
+
+    border-top:5px solid
+    var(--gold);
+
+}
+
+.detail-card i{
+
+    width:85px;
+
+    height:85px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    font-size:32px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--green),
+    var(--green2));
+
+    box-shadow:
+    0 15px 30px
+    rgba(46,125,50,.25);
+
+    margin-bottom:25px;
+
+}
+
+.detail-card h3{
+
+    font-family:
+    'Cormorant Garamond',
+    serif;
+
+    font-size:34px;
+
+    color:var(--dark);
+
+    margin-bottom:12px;
+
+}
+
+.detail-card p{
+
+    color:#6b7f72;
+
+    margin-bottom:10px;
+
+    font-size:16px;
+
+}
+
+.detail-card strong{
+
+    display:block;
+
+    color:var(--green);
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+/*=========================================
+RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+.countdown-grid{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+}
+
+.details-container{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.countdown-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.time-card h1{
+
+    font-size:56px;
+
+}
+
+.detail-card{
+
+    padding:35px 25px;
+
+}
+
+}
+/*==================================================
+        STYLE.CSS V2 - PART 2B
+        TIMELINE
+        ABOUT
+        QUOTE
+==================================================*/
+
+
+
+/*=========================================
+ABOUT
+=========================================*/
+
+#about{
+
+    background:white;
+
+}
+
+.about-wrapper{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.about-image{
+
+    position:relative;
+
+}
+
+.about-image img{
+
+    width:100%;
+
+    border-radius:30px;
+
+    box-shadow:0 30px 60px rgba(0,0,0,.15);
+
+}
+
+.about-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-20px;
+
+    border:2px solid rgba(212,175,55,.35);
+
+    border-radius:35px;
+
+    z-index:-1;
+
+}
+
+.about-content span{
+
+    display:inline-block;
+
+    color:var(--green2);
+
+    letter-spacing:5px;
+
+    font-size:14px;
+
+    margin-bottom:18px;
+
+}
+
+.about-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:64px;
+
+    color:var(--dark);
+
+    margin-bottom:25px;
+
+}
+
+.about-content p{
+
+    font-size:18px;
+
+    color:#5d7466;
+
+    line-height:2;
+
+    margin-bottom:20px;
+
+}
+
+/*=========================================
+QUOTE
+=========================================*/
+
+#quote{
+
+    background:
+    linear-gradient(
+    135deg,
+    #1b5e20,
+    #2e7d32);
+
+    color:white;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+#quote::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+    rgba(255,255,255,.08),
+    transparent 70%);
+
+}
+
+.quote-container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.quote-container i{
+
+    font-size:70px;
+
+    color:var(--gold);
+
+    margin-bottom:30px;
+
+}
+
+.quote-container blockquote{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px;
+
+    font-style:italic;
+
+    line-height:1.6;
+
+    color:#fffef7;
+
+}
+
+/*=========================================
+RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+.timeline::before{
+
+    left:20px;
+
+}
+
+.timeline-item{
+
+    width:100%;
+
+    margin-left:0 !important;
+
+    padding-left:60px !important;
+
+    padding-right:0 !important;
+
+    text-align:left;
+
+}
+
+.timeline-item::before{
+
+    left:8px !important;
+
+    right:auto !important;
+
+}
+
+.about-wrapper{
+
+    grid-template-columns:1fr;
+
+}
+
+.about-content{
+
+    text-align:center;
+
+}
+
+.about-content h2{
+
+    font-size:48px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.timeline-content{
+
+    padding:24px;
+
+}
+
+.timeline-content h3{
+
+    font-size:28px;
+
+}
+
+.quote-container blockquote{
+
+    font-size:30px;
+
+}
+
+.about-content h2{
+
+    font-size:40px;
+
+}
+
+.about-content p{
+
+    font-size:16px;
+
+}
+
+}
